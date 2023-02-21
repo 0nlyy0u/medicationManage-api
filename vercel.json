@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "music-album",
+    "name": "medication-management-api",
     "builds": [
         {
             "src": "./src/server.js",
