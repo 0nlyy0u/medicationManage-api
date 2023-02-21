@@ -6,6 +6,7 @@ import { env } from '*/config/environtment'
 import { apiV1 } from '*/routes/v1'
 import cookieParser from 'cookie-parser'
 import http from 'http'
+import path from 'path'
 import socket from 'socket.io'
 import { inviteUserToBoardSocket } from './src/sockets/inviteUserToBoardSocket'
 
@@ -35,7 +36,10 @@ const bootServer = () => {
     // Use APIs v1
     app.use('/v1', apiV1)
     app.use('/uploads', express.static('uploads'))
-
+    app.use('/', function (req, res) {
+        res.sendFile(path.join(__dirname + '/express/index.html'));
+        //__dirname : It will resolve to your project folder.
+    })
     // For real-time
     const server = http.createServer(app)
     const io = socket(server, { cors: corsOptions })
