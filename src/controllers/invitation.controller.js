@@ -10,7 +10,6 @@ const createNewBoardInvitation = async (req, res) => {
         )
         res.status(HttpStatusCode.OK).json(result)
     } catch (error) {
-        console.log(error)
         res.status(HttpStatusCode.INTERNAL_SERVER).json({
             errors: error.message,
         })

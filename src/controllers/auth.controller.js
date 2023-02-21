@@ -75,7 +75,6 @@ const logout = async (req, res) => {
 }
 
 const refreshToken = async (req, res) => {
-    console.log(req)
     try {
         const result = await AuthService.refreshToken(req)
 
@@ -93,7 +92,6 @@ const refreshToken = async (req, res) => {
 }
 
 const update = async (req, res) => {
-    console.log(req.file)
     try {
         const userId = req.jwtDecoded._id
         const userAvatarFile = req.file

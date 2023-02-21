@@ -5,10 +5,9 @@ import { connectDB } from '*/config/mongodb'
 import { env } from '*/config/environtment'
 import { apiV1 } from '*/routes/v1'
 import cookieParser from 'cookie-parser'
-import path from 'path'
 import http from 'http'
 import socket from 'socket.io'
-import { inviteUserToBoardSocket } from './sockets/inviteUserToBoardSocket'
+import { inviteUserToBoardSocket } from './src/sockets/inviteUserToBoardSocket'
 
 connectDB()
     .then(() => console.log('Connected successfully to database server!'))

@@ -90,7 +90,6 @@ const deleteToken = async (req, res, next) => {
         // Cho phép REQUEST đi tiếp
         next()
     } catch (error) {
-        console.log(error)
         if (error?.message?.includes('jwt expired')) {
             // access token hết hạn => Cần trả về mã lỗi cho FE để gọi API refreshToken
             return res.status(HttpStatusCode.EXPIRED).json({
