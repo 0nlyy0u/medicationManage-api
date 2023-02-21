@@ -8,10 +8,11 @@ export const corsOptions = {
         if (!origin && env.BUILD_MODE === 'dev') {
             return callback(null, true)
         }
-        if (WHITELIST_DOMAINS.indexOf(origin) !== -1) {
-            return callback(null, true)
-        }
-        return callback(new Error(`${origin} not allowed by CORS.`))
+        return callback(null, true)
+        // if (WHITELIST_DOMAINS.indexOf(origin) !== -1) {
+        //     return callback(null, true)
+        // }
+        // return callback(new Error(`${origin} not allowed by CORS.`))
     },
     optionsSuccessStatus: 200,
     credentials: true // Nhận cookie

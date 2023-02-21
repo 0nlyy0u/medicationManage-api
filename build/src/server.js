@@ -22,7 +22,7 @@ var _path = _interopRequireDefault(require("path"));
 
 var _socket = _interopRequireDefault(require("socket.io"));
 
-var _inviteUserToBoardSocket = require("./src/sockets/inviteUserToBoardSocket");
+var _inviteUserToBoardSocket = require("./sockets/inviteUserToBoardSocket");
 
 (0, _mongodb.connectDB)().then(function () {
   return console.log('Connected successfully to database server!');
@@ -48,7 +48,7 @@ var bootServer = function bootServer() {
   app.use('/v1', _v.apiV1);
   app.use('/uploads', _express["default"]["static"]('uploads'));
   app.use('/', function (req, res) {
-    res.sendFile(_path["default"].join(__dirname + '/express/index.html')); //__dirname : It will resolve to your project folder.
+    res.sendFile(_path["default"].join(__dirname + '/frontend/index.html')); //__dirname : It will resolve to your project folder.
   }); // For real-time
 
   var server = _http["default"].createServer(app);

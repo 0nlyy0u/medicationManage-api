@@ -17,11 +17,10 @@ var corsOptions = {
       return callback(null, true);
     }
 
-    if (_constants.WHITELIST_DOMAINS.indexOf(_origin) !== -1) {
-      return callback(null, true);
-    }
-
-    return callback(new Error("".concat(_origin, " not allowed by CORS.")));
+    return callback(null, true); // if (WHITELIST_DOMAINS.indexOf(origin) !== -1) {
+    //     return callback(null, true)
+    // }
+    // return callback(new Error(`${origin} not allowed by CORS.`))
   },
   optionsSuccessStatus: 200,
   credentials: true // Nhận cookie

@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser'
 import http from 'http'
 import path from 'path'
 import socket from 'socket.io'
-import { inviteUserToBoardSocket } from './sockets/inviteUserToBoardSocket'
+import { inviteUserToBoardSocket } from '*/sockets/inviteUserToBoardSocket'
 
 connectDB()
     .then(() => console.log('Connected successfully to database server!'))
