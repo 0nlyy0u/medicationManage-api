@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser'
 import http from 'http'
 import path from 'path'
 import socket from 'socket.io'
-import { inviteUserToBoardSocket } from './src/sockets/inviteUserToBoardSocket'
+import { inviteUserToBoardSocket } from './sockets/inviteUserToBoardSocket'
 
 connectDB()
     .then(() => console.log('Connected successfully to database server!'))
@@ -37,7 +37,7 @@ const bootServer = () => {
     app.use('/v1', apiV1)
     app.use('/uploads', express.static('uploads'))
     app.use('/', function (req, res) {
-        res.sendFile(path.join(__dirname + '/express/index.html'));
+        res.sendFile(path.join(__dirname + '/frontend/index.html'))
         //__dirname : It will resolve to your project folder.
     })
     // For real-time
