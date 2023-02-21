@@ -230,12 +230,11 @@ var refreshToken = /*#__PURE__*/function () {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
-            console.log(req);
-            _context5.prev = 1;
-            _context5.next = 4;
+            _context5.prev = 0;
+            _context5.next = 3;
             return _auth.AuthService.refreshToken(req);
 
-          case 4:
+          case 3:
             result = _context5.sent;
             // xử lý cookie ở đây
             res.cookie('accessToken', result.data.accessToken, {
@@ -257,22 +256,22 @@ var refreshToken = /*#__PURE__*/function () {
               maxAge: (0, _ms["default"])('12 days')
             });
             res.status(_constants.HttpStatusCode.OK).json(result);
-            _context5.next = 14;
+            _context5.next = 13;
             break;
 
-          case 11:
-            _context5.prev = 11;
-            _context5.t0 = _context5["catch"](1);
+          case 10:
+            _context5.prev = 10;
+            _context5.t0 = _context5["catch"](0);
             res.status(_constants.HttpStatusCode.INTERNAL_SERVER).json({
               errors: _context5.t0.message
             });
 
-          case 14:
+          case 13:
           case "end":
             return _context5.stop();
         }
       }
-    }, _callee5, null, [[1, 11]]);
+    }, _callee5, null, [[0, 10]]);
   }));
 
   return function refreshToken(_x9, _x10) {
@@ -287,32 +286,31 @@ var update = /*#__PURE__*/function () {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
-            console.log(req.file);
-            _context6.prev = 1;
+            _context6.prev = 0;
             userId = req.jwtDecoded._id;
             userAvatarFile = req.file;
-            _context6.next = 6;
+            _context6.next = 5;
             return _auth.AuthService.update(userId, req.body, userAvatarFile);
 
-          case 6:
+          case 5:
             result = _context6.sent;
             res.status(_constants.HttpStatusCode.OK).json(result);
-            _context6.next = 13;
+            _context6.next = 12;
             break;
 
-          case 10:
-            _context6.prev = 10;
-            _context6.t0 = _context6["catch"](1);
+          case 9:
+            _context6.prev = 9;
+            _context6.t0 = _context6["catch"](0);
             res.status(_constants.HttpStatusCode.INTERNAL_SERVER).json({
               errors: _context6.t0.message
             });
 
-          case 13:
+          case 12:
           case "end":
             return _context6.stop();
         }
       }
-    }, _callee6, null, [[1, 10]]);
+    }, _callee6, null, [[0, 9]]);
   }));
 
   return function update(_x11, _x12) {

@@ -9,9 +9,9 @@
         "clean": "rm -rf build && mkdir build",
         "build-babel": "babel ./src -d ./build/src",
         "build": "npm run clean && npm run build-babel",
-        "production": "npm run build && cross-env BUILD_MODE=production node ./build/server.js",
-        "dev": "cross-env BUILD_MODE=dev nodemon --exec ./node_modules/.bin/babel-node server.js",
-        "start": "node server.js"
+        "production": "npm run build && cross-env BUILD_MODE=production node ./build/src/server.js",
+        "dev": "cross-env BUILD_MODE=dev nodemon --exec ./node_modules/.bin/babel-node ./src/server.js",
+        "start": "node ./build/src/server.js"
     },
     "repository": {
         "type": "git",

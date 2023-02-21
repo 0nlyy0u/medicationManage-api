@@ -30,18 +30,17 @@ var createNewBoardInvitation = /*#__PURE__*/function () {
           case 4:
             result = _context.sent;
             res.status(_constants.HttpStatusCode.OK).json(result);
-            _context.next = 12;
+            _context.next = 11;
             break;
 
           case 8:
             _context.prev = 8;
             _context.t0 = _context["catch"](0);
-            console.log(_context.t0);
             res.status(_constants.HttpStatusCode.INTERNAL_SERVER).json({
               errors: _context.t0.message
             });
 
-          case 12:
+          case 11:
           case "end":
             return _context.stop();
         }

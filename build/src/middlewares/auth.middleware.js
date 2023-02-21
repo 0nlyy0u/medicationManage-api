@@ -237,16 +237,15 @@ var deleteToken = /*#__PURE__*/function () {
           case 12:
             // Cho phép REQUEST đi tiếp
             next();
-            _context3.next = 21;
+            _context3.next = 20;
             break;
 
           case 15:
             _context3.prev = 15;
             _context3.t0 = _context3["catch"](3);
-            console.log(_context3.t0);
 
             if (!(_context3.t0 !== null && _context3.t0 !== void 0 && (_error$message2 = _context3.t0.message) !== null && _error$message2 !== void 0 && _error$message2.includes('jwt expired'))) {
-              _context3.next = 20;
+              _context3.next = 19;
               break;
             }
 
@@ -254,12 +253,12 @@ var deleteToken = /*#__PURE__*/function () {
               errors: 'Access Token Expired. Need to refresh token'
             }));
 
-          case 20:
+          case 19:
             return _context3.abrupt("return", res.status(_constants.HttpStatusCode.UNAUTHORIZED).json({
               errors: 'Unauthorized'
             }));
 
-          case 21:
+          case 20:
           case "end":
             return _context3.stop();
         }
